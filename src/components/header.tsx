@@ -10,7 +10,6 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Si se hizo clic fuera del menú y fuera del botón
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target as Node) &&
@@ -23,7 +22,7 @@ export default function Header() {
     document.addEventListener('mousedown', handleClickOutside);
     
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen]);
+  }, []);
 
   return(
     <header>
