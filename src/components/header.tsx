@@ -8,6 +8,7 @@ export default function Header() {
   const menuRef = useRef<HTMLElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
+  {/* for closing mobile navbar when clicking outside */}
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -20,23 +21,21 @@ export default function Header() {
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-    
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return(
     <header>
       {/* primera fila del header */}
-
       {/* Logo y nombre */}
       <div className="flex justify-between">
         <div className="bg-green-200">
           logo y nombre
         </div>
 
-        {/* barra de búsqueda */}
-        <div className="bg-green-500">
-          barra de busqueda
+        {/* desktop search bar*/}
+        <div className="bg-green-500 hidden md:block">
+          desktop search bar
         </div>
 
         {/* mobile navbar button */}
@@ -57,6 +56,7 @@ export default function Header() {
               <li>category one</li>
               <li>category two</li>
               <li>category three</li>
+              <li className="bg-purple-200">desktop navbar</li>
             </ul>
           </nav>
         )}
@@ -65,18 +65,24 @@ export default function Header() {
         <nav className="bg-purple-200 hidden md:block">
           deskop navbar
         </nav>
-
-
       </div>
 
       {/* segunda fila del header */}
-      <div className="bg-blue-500">
+      {/* desktop categories */}
+      <div className="bg-blue-500 hidden md:block">
         <ul className="flex justify-between">
           <li>category one</li>
           <li>category two</li>
           <li>category three</li>
         </ul>
       </div>
+      
+      {/* mobile search bar */}
+      <div className="bg-green-500 md:hidden">
+        mobile search bar
+      </div>
+
+
     </header>
   );
 }
