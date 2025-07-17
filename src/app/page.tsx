@@ -1,17 +1,23 @@
+import Carrousel from "@/components/carrousel";
+import { ITEMS_MAS_PEDIDOS } from "@/components/carrousel-images"
+
 export default function Home() {
+
   return (
-    <div>
-      <div className="bg-indigo-200 h-[300px]">
-        carrousel one
-      </div>
+    <main>
+      <Carrousel 
+        headliner="Los más pedidos" 
+        images={ITEMS_MAS_PEDIDOS}  
+      />
+
 
       <div className="bg-violet-300 h-[300px]">
-        carrousel two
+        <Carrousel headliner="Panes"/>
       </div>
 
       <div className="bg-fuchsia-500 h-[300px]">
-        carrousel three
+        <Carrousel headliner="Pasteles" />
       </div>
-    </div>
+    </main>
   );
 }
