@@ -1,12 +1,22 @@
 'use client'
-
+import Image from "next/image"
+import logo from "public/logo-panaderia-F.png"
 import { useState, useEffect, useRef } from "react"
+import HamburgerButton from "./hamburger-button"
+import SearchBar from "./search-bar"
+import MobileNav from "./mobile-nav"
 
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+
+  const handleSearch = (query: string) => {
+    console.log("Searching for:", query);
+    // TODO: Implement search functionality
+    // This could navigate to a search results page or filter products
+  };
 
   {/* for closing mobile navbar when clicking outside */}
   useEffect(() => {
@@ -29,58 +39,85 @@ export default function Header() {
       {/* primera fila del header */}
       {/* Logo y nombre */}
       <div className="flex justify-between">
-        <div className="bg-green-200">
-          logo y nombre
-        </div>
+        <Image
+          src={logo}
+          alt="logo"
+          width={120}
+          className="p-2"
+        />
 
-        {/* desktop search bar*/}
-        <div className="bg-green-500 hidden md:block">
-          desktop search bar
-        </div>
+        {/* Search Bar - Centro */}
+        <SearchBar 
+          placeholder="Buscar panes, pasteles..."
+          onSearch={handleSearch}
+          className="w-96 hidden pt-3 md:block"
+        />
 
-        {/* mobile navbar button */}
-        <button 
-          ref={buttonRef}
-          className="bg-yellow-500 md:hidden" onClick={() => setIsOpen(!isOpen)}
+        {/* Contáctanos - Derecha */}
+        <button
+          className="md:items-center space-x-2 px-4 py-2 cursor-pointer font-medium hidden md:flex"
+          onClick={() => {
+            // TODO: Implement contact functionality
+            console.log("Contáctanos clicked");
+          }}
         >
-          boton de mobile navbar
+          <svg 
+            className="w-5 h-5" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
+            />
+          </svg>
+          <span>Contáctanos</span>
         </button>
 
-        {/* mobile navbar */}
-        {isOpen && (
-          <nav 
-            ref={menuRef}
-            className="bg-yellow-200 absolute right-0 top-6 md:hidden"
-          >
-            <ul>
-              <li>category one</li>
-              <li>category two</li>
-              <li>category three</li>
-              <li className="bg-purple-200">desktop navbar</li>
-            </ul>
-          </nav>
-        )}
 
-        {/* desktop navbar */}
-        <nav className="bg-purple-200 hidden md:block">
-          deskop navbar
-        </nav>
+
+        {/* mobile navbar button */}
+        <HamburgerButton
+          isOpen={isOpen}
+          onClick={() => setIsOpen(!isOpen)}
+          buttonRef={buttonRef}
+        />
+
+        {/* mobile navbar */}
+        {isOpen && <MobileNav menuRef={menuRef} />}
       </div>
 
       {/* segunda fila del header */}
       {/* desktop categories */}
-      <div className="bg-blue-500 hidden md:block">
-        <ul className="flex justify-between">
-          <li>category one</li>
-          <li>category two</li>
-          <li>category three</li>
+      <div className="bg-amber-700 hidden md:block">
+        <ul className="flex justify-center space-x-8 py-3">
+          <li>
+            <a href="#" className="text-white hover:text-amber-200 transition-colors font-medium">
+              Panes
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-white hover:text-amber-200 transition-colors font-medium">
+              Pasteles
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-white hover:text-amber-200 transition-colors font-medium">
+              Abarrotes
+            </a>
+          </li>
         </ul>
       </div>
       
       {/* mobile search bar */}
-      <div className="bg-green-500 md:hidden">
-        mobile search bar
-      </div>
+      <SearchBar 
+        placeholder="Buscar productos..."
+        onSearch={handleSearch}
+        className="md:hidden p-4"
+      />
 
 
     </header>
