@@ -1,5 +1,5 @@
 import Carousel from "@/components/carousel";
-import { ITEMS_MAS_PEDIDOS } from "@/components/carousel-images"
+import { PANES, PASTELES } from "@/components/carousel-images"
 
 export default function Home() {
 
@@ -7,12 +7,12 @@ export default function Home() {
     <main>
       <Carousel 
         headliner="Panes"
-        images={ITEMS_MAS_PEDIDOS}
+        images={PANES}
       />
 
       <Carousel 
         headliner="Pasteles"
-        images={ITEMS_MAS_PEDIDOS}
+        images={PASTELES}
       />
     </main>
   );
