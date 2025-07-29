@@ -1,18 +1,19 @@
 'use client'
 import React from "react";
+import Link from "next/link";
 
 const DesktopCategories: React.FC = () => {
     return (
         <ul className="md:flex justify-center space-x-8 py-3 bg-gray-800 hidden mb-3">
             <li>
-                        <a href="/panes" className="text-white hover:text-amber-200 transition-colors font-medium">
-          Panes
-        </a>
+                <Link href="/panes" className="text-white hover:text-amber-200 transition-colors font-medium">
+                    Panes
+                </Link>
             </li>
             <li>
-                <a href="#" className="text-white hover:text-amber-200 transition-colors font-medium">
+                <Link href="#" className="text-white hover:text-amber-200 transition-colors font-medium">
                     Pasteles
-                </a>
+                </Link>
             </li>
         </ul>
     );

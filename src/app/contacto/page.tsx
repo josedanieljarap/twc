@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function ContactoPage() {
   const whatsappNumber = "5551234567"; // Número sin código de país
   const whatsappMessage = "Hola! Me gustaría hacer un pedido de panes."; // Mensaje predefinido

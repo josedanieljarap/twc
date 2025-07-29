@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
         <footer className="bg-gray-800 text-white py-8">
@@ -38,12 +40,12 @@ export default function Footer() {
                             © 2024 Panadería Moisés. Todos los derechos reservados.
                         </p>
                         <div className="flex space-x-4 text-sm">
-                            <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+                            <Link href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                                 Privacidad
-                            </a>
-                            <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+                            </Link>
+                            <Link href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                                 Términos
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

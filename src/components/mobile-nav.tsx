@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import Link from "next/link";
 import PhoneIcon from "./icons/phone-icon";
 
 interface MobileNavProps {
@@ -15,19 +16,19 @@ const MobileNav: React.FC<MobileNavProps> = ({ menuRef }) => {
       <ul className="py-2">
         {/* Categorías de Productos */}
         <li>
-          <a href="/panes" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
+          <Link href="/panes" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
             Panes
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
+          <Link href="#" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
             Pasteles
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
+          <Link href="#" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
             Abarrotes
-          </a>
+          </Link>
         </li>
         
         {/* Separador */}
@@ -35,12 +36,12 @@ const MobileNav: React.FC<MobileNavProps> = ({ menuRef }) => {
         
         {/* Sección de Contacto */}
         <li>
-          <a href="/contacto" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
+          <Link href="/contacto" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
             <div className="flex items-center space-x-3">
               <PhoneIcon />
               <span>Contáctanos</span>
             </div>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
