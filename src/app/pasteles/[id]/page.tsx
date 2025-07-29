@@ -12,11 +12,12 @@ const PASTELES_PRODUCTOS = [
 ];
 
 interface ProductPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function PastelPage({ params }: ProductPageProps) {
-  const pastel = PASTELES_PRODUCTOS.find(p => p.id === params.id);
+export default async function PastelPage({ params }: ProductPageProps) {
+  const { id } = await params;
+  const pastel = PASTELES_PRODUCTOS.find(p => p.id === id);
   if (!pastel) notFound();
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
