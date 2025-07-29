@@ -11,7 +11,7 @@ const DesktopCategories: React.FC = () => {
                 </Link>
             </li>
             <li>
-                <Link href="#" className="text-white hover:text-amber-200 transition-colors font-medium">
+                <Link href="/pasteles" className="text-white hover:text-amber-200 transition-colors font-medium">
                     Pasteles
                 </Link>
             </li>

@@ -3,6 +3,11 @@ import italianoImg from "public/pan-italiano.png.webp"
 import ciabattaImg from "public/pan-ciabatta.png"
 import yemaImg from "public/pan-yema.png"
 import croissantImg from "public/croissant.png"
+import empanadaImg from "public/empanada.png"
+import pastelManzanaImg from "public/pastel-manzana.png"
+import pastelPlatanoImg from "public/pastel-platano.png"
+import panueloImg from "public/panuelo.png"
+import donaImg from "public/dona.png"
   
 export const PANES = [
   {
@@ -37,31 +42,35 @@ export const PANES = [
   }
 ];
 
-
 export const PASTELES = [
   {
-    src: francesImg,
+    src: empanadaImg,
     alt: "empanada de pollo",
-    des: "Empanada de pollo"
+    des: "Empanada de pollo",
+    id: "empanada-pollo"
   },
   {
-    src: italianoImg,
+    src: pastelManzanaImg,
     alt: "pastel de manzana",
-    des: "Pastel de manzana"
+    des: "Pastel de manzana",
+    id: "pastel-manzana"
   },
   {
-    src: ciabattaImg,
+    src: pastelPlatanoImg,
     alt: "pastel de plátano",
-    des: "Pastel de plátano"
+    des: "Pastel de plátano",
+    id: "pastel-platano"
   },
   {
-    src: yemaImg,
+    src: panueloImg,
     alt: "pañuelo",
-    des: "Pañuelo"
+    des: "Pañuelo",
+    id: "panuelo"
   },
   {
-    src: croissantImg,
+    src: donaImg,
     alt: "dona",
-    des: "Dona"
+    des: "Dona",
+    id: "dona"
   }
 ];

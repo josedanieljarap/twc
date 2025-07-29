@@ -21,7 +21,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ menuRef }) => {
           </Link>
         </li>
         <li>
-          <Link href="#" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
+          <Link href="/pasteles" className="block px-6 py-3 text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors font-medium">
             Pasteles
           </Link>
         </li>

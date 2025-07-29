@@ -33,6 +33,9 @@ export default function Carousel({ headliner, images = []}: CarouselProps) {
         }
     };
 
+    // Determinar la ruta base según el headliner
+    const basePath = headliner?.toLowerCase() === "pasteles" ? "/pasteles" : "/panes";
+
     return(
         <section className="relative w-full max-w-6xl mx-auto px-4">
             {/* Flecha izquierda - Fija en el borde izquierdo del contenedor */}
@@ -55,7 +58,7 @@ export default function Carousel({ headliner, images = []}: CarouselProps) {
                     {images.map((img, idx) => (
                         <div key={idx} className="flex-shrink-0">
                             {img.id ? (
-                                <Link href={`/panes/${img.id}`} className="group">
+                                <Link href={`${basePath}/${img.id}`} className="group">
                                     <div className="transition-transform duration-300 group-hover:scale-105">
                                         <Image 
                                             src={img.src}
