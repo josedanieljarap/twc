@@ -77,13 +77,14 @@ const PANES_PRODUCTOS = [
 ];
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const producto = PANES_PRODUCTOS.find(p => p.id === params.id);
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = await params;
+  const producto = PANES_PRODUCTOS.find(p => p.id === id);
 
   if (!producto) {
     notFound();
