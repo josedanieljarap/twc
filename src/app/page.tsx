@@ -1,5 +1,5 @@
 import Carousel from "@/components/carousel";
-import { PANES, PASTELES } from "@/components/carousel-images"
+import { PANES, PASTELES } from "@/data/items"
 
 export default function Home() {
 

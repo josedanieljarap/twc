@@ -75,10 +75,10 @@ export default function Header() {
 
       {/* segunda fila del header */}
       <div>
-        {/* desktop categories */}
+      {/* desktop categories */}
         <DesktopCategories />
-
-        {/* mobile search bar */}
+      
+      {/* mobile search bar */}
         <SearchBar 
           placeholder="Buscar productos..."
           onSearch={handleSearch}

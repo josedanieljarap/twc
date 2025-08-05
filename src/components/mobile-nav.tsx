@@ -11,7 +11,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ menuRef }) => {
   return (
     <nav 
       ref={menuRef}
-      className="absolute right-0 top-14 md:hidden bg-white shadow-lg border border-gray-200 rounded-lg min-w-48 z-50"
+      className="absolute right-0 top-14 md:hidden bg-blue-100 shadow-lg border border-gray-200 rounded-lg min-w-48 z-50"
     >
       <ul className="py-2">
         {/* Categorías de Productos */}
