@@ -8,9 +8,10 @@ import pastelManzanaImg from "public/pastel-manzana.png"
 import pastelPlatanoImg from "public/pastel-platano.png"
 import panueloImg from "public/panuelo.png"
 import donaImg from "public/dona.png"
+import { StaticImageData } from "next/image"
 
 export interface Producto {
-  src: any;
+  src: StaticImageData;
   alt: string;
   des: string;
   id: string;
